@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         cbbp simplify
-// @namespace    
-// @downloadURL  
-// @version      0.1.2
+// @namespace    https://github.com/dvere/cbbpSimplify
+// @downloadURL  https://github.com/dvere/cbbpSimplify/raw/master/cbbpSimplify.user.js
+// @version      0.2
 // @description  Improve the layout of chaturbate.com member broadcast page
 // @author       dvere
 // @match        https://chaturbate.com/b/*
