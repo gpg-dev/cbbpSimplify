@@ -2,7 +2,7 @@
 // @name         cbbp simplify
 // @namespace    https://github.com/dvere/cbbpSimplify
 // @downloadURL  https://github.com/dvere/cbbpSimplify/raw/master/cbbpSimplify.user.js
-// @version      0.2
+// @version      0.2.1
 // @description  Improve the layout of chaturbate.com member broadcast page
 // @author       dvere
 // @match        https://chaturbate.com/b/*
@@ -27,33 +27,24 @@
 
   junk_elements.forEach(e => (document.querySelector(e) && document.querySelector(e).remove()))
 
-  let aI = document.querySelector('div[ts=aI]')
-  let QG = document.querySelector('div[ts=QG]')
-  let jG = document.querySelector('div[ts=jG]')
-  let Fs = document.querySelector('div[ts=Fs]')
-  let os = document.querySelector('div[ts=os]')
-  let mC = document.querySelector('div[ts=mC]')
-  let kD = document.querySelector('div[ts=kD]')
-  let ci = document.querySelector('#ChatTabContents > div.inputDiv')
-  
+  let broadcastRoot = document.querySelector('#main > div:nth-child(5)')
+  let broadcastHeader = broadcastRoot.children[1]
+  let broadcastOuterContainer = broadcastRoot.children[2]
+  let broadcastInnerContainer = broadcastOuterContainer.firstElementChild
+  let broadcastHeadline = broadcastInnerContainer.childNodes[1]
+  let broadcastBox = broadcastInnerContainer.childNodes[2]
+  let room = broadcastBox.firstElementChild
+  let camBox = room.firstElementChild
+  let chatBox = room.children[1]
 
-  aI.children[2].removeAttribute('style')
-  aI.children[1].remove()
-  QG.parentElement.removeAttribute('style')
-  jG.style.margin = 0
-  jG.previousSibling.style.width = 'auto'
-  jG.previousSibling.style.float = 'none'
-  jG.parentElement.style.height = 'auto'
-  Fs.style.width = '100%'
-  os.style.margin = '0 auto'
-  os.style.position = 'relative'
-  ci.width = 'auto'
-  mC.removeAttribute('style')
-  mC.style.margin = 0
-  mC.style.width = '100%'
-  kD.removeAttribute('style')
-  kD.style.margin = 0
-  kD.style.width = '100%'
-  mC.firstChild.firstChild.style.width = '100%'
+
+  broadcastHeader.remove()
+  broadcastRoot.removeAttribute('style')
+  broadcastOuterContainer.removeAttribute('style')
+  broadcastInnerContainer.removeAttribute('style')
+  room.removeAttribute('style')
+
+  camBox.setAttribute('style', 'margin: 0 2px; background: rgb(255, 255, 255); border: 1px solid rgb(172, 172, 172); border-radius: 4px;')
+  chatBox.setAttribute('style', 'margin: 0 2px; background: rgb(255, 255, 255); border: 1px solid rgb(172, 172, 172); border-radius: 4px;')
 
 })();
