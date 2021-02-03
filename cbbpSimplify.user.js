@@ -36,14 +36,14 @@
   let room = broadcastBox.firstElementChild
   let camBox = room.firstElementChild
   let chatBox = room.children[1]
-
+  let player = document.getElementById('player')
 
   broadcastHeader.remove()
   broadcastRoot.removeAttribute('style')
   broadcastOuterContainer.removeAttribute('style')
   broadcastInnerContainer.removeAttribute('style')
   room.removeAttribute('style')
-
+  player.children[2].style.position = 'relative'
   camBox.setAttribute('style', 'margin: 0 2px; background: rgb(255, 255, 255); border: 1px solid rgb(172, 172, 172); border-radius: 4px;')
   chatBox.setAttribute('style', 'margin: 0 2px; background: rgb(255, 255, 255); border: 1px solid rgb(172, 172, 172); border-radius: 4px;')
 
